@@ -1,0 +1,89 @@
+title: Opensource projekty
+url: http://seznam.github.io
+description: >
+    Naše zlepšováky pro vývoj webových aplikcí rádi poskytujeme do veřejného prostoru jako open source.
+author: Luboš Schrámek
+keywords: >
+  seznam, opensource
+
+safe: false
+auto: true
+server: false
+server_port: 4000
+baseurl: /
+url: http://localhost:4000
+
+source: .
+destination: ./_site
+plugins: ./_plugins
+
+future: true
+lsi: false
+pygments: true
+markdown: maruku
+permalink: date
+
+
+# Seznam projektů
+projects:
+  
+  # JAK
+  - key: jak      
+    title: JAK
+    url: /jak/index.html
+    description: >
+        Kompletní a jednoduchý systém volně provázaných knihoven, usnadňující práci v prostředí jazyka JavaScript.
+    keywords: >
+        jak,javascript
+    version: 2.0
+    download: https://github.com/seznam/JAK  
+    features:
+      - title: Detekce klienta a prostředí
+        perex: >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
+      - title: Detekce klienta a prostředí
+        perex: >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
+      - title: Detekce klienta a prostředí
+        perex: >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.            
+    menu:
+      - link:
+        title: "JAK"
+        url: "/jak/index.html"
+      - link:
+        title: "Dokumentace"
+        url: "/jak/dokumentace/index.html"
+      - link:
+        title: "Ke stažení"
+        url: "https://github.com/seznam/JAK"
+    panel:
+      - link:
+        title: Instalace
+        url: "#installation"
+      - link:
+        title: Hello World
+        url: "#hello"
+      - link:
+        title: "Jádro"
+        url: "#core"
+  # TEng        
+  - key: teng
+    title: TEng
+    url: /teng/index.html
+    description: >
+        Blábol
+    keywords: >
+        jak,javascript
+    version: 2.0
+    download: https://github.com/seznam/JAK  
+    menu:
+      - link:
+        title: JAK
+        url: /jak/index.html
+      - link:
+        title: Dokumentace
+        url: /jak/dokumentace/index.html
+      - link:
+        title: Ke stažení
+        url: https://github.com/seznam/JAK

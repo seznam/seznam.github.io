@@ -1,0 +1,7 @@
+<aside id="panel">
+	<ul class="nav">
+		{% for item in project.panel %}
+			<li class="{% if forloop.last %}last{% endif %}"><a href="{{item.url}}">{{item.title}}</a></li>
+		{% endfor %}		
+	</ul>
+</aside>

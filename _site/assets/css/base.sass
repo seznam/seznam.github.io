@@ -1,0 +1,70 @@
+@mixin borderRadius($radius: 5px)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-o-border-radius: $radius
+	border-radius: $radius
+
+$redColor: #DE0000
+$grayColor: #8B8888
+$lightgrayColor: #8D8989
+
+body
+	font-family: "Arial", sans-serif
+	padding: 0
+	margin: 0
+
+.cleaner
+	width: 100%
+	height: 1px
+	clear: both
+
+h1
+	color: $grayColor
+	font-weight: bold
+	text-transform: uppercase
+	text-align: center
+	font-size: 70px
+	margin: 0px auto 10px
+
+.description
+	font-style: italic
+	color: $lightgrayColor
+	text-align: center
+	font-family: Georgia,Arial, sans
+	display: block
+	font-size: 24px
+	margin: 10px auto 50px
+	width: 800px
+
+.heading
+	color: $grayColor
+	font-size: 24px
+	font-weight: bold
+	margin: 50px auto 0
+	text-align: center
+	text-transform: uppercase
+
+footer
+	text-align: center
+	border-top: 1px solid #CDCDCD
+	display: block
+	height: auto
+	overflow: hidden
+	padding: 25px 0
+	position: relative
+	width: 100%
+	margin-top: 50px
+
+	.centered
+		display: block
+		margin: 0 auto
+		padding: 10px
+		text-align: center
+
+	.link
+		color: $redColor
+		display: inline-block
+		font-size: 13px
+		margin-right: 0.4em
+		text-align: left
+		padding: 0

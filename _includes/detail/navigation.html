@@ -1,0 +1,15 @@
+<nav>
+	<a class="logo" href="/" title="{{ site.title }}"><span>{{ site.title }}</span></a> 
+	<ul class="menu">
+		{% for item in project.menu %}
+			{% if page.url == item.url %}
+				<li><a title="{{item.title}}" href="{{item.url}}" class="active">{{item.title}}</a></li>
+			{% else %}
+				<li><a title="{{item.title}}" href="{{item.url}}">{{item.title}}</a></li>			
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<ul class="right">
+		<li><a target="_blank" href="http://www.seznam.cz">Seznam.cz</a></li>
+	</ul>
+</nav>

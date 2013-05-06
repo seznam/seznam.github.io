@@ -1,0 +1,130 @@
+---
+layout: documentation
+projectkey: jak
+title: JAK Dokumentace
+---
+<section id="installation">
+	<h1>Nadpis h1</h1>
+	<p class="description">Popis sekce</p>
+	<ul>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<ul class="two">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+	</ul>	
+	<ul class="three">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<h2>Nadpis h2</h2>
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+
+{% highlight html %}
+<section id="installation">
+	<h1>Nadpis h1</h1>
+	<p class="description">Popis sekce</p>
+	<ul>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<ul class="two">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+	</ul>	
+	<ul class="three">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<h2>Nadpis h2</h2>
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+{% endhighlight %}
+			
+<section id="core">
+	<h1>Jádro</h1>
+	<p class="description">Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.</p>
+	<ul class="submenu two">
+		<li><a href="#namespace"><span class="bullet"></span>Jmenný prostor</a></li>
+		<li><a href="#prototypes"><span class="bullet"></span>Přidané prototypové metody</a></li>
+		<li><a href="#polyfills"><span class="bullet"></span>Polyfilly</a></li>
+		<li><a href="#classmaker"><span class="bullet"></span>OOP</a></li>
+		<li><a href="#events"><span class="bullet"></span>Události</a></li>
+		<li><a href="#clientDetect"><span class="bullet"></span>Detekce klienta</a></li>
+		<li><a href="#getElement"><span class="bullet"></span>Manipulace s DOM elementy</a></li>
+		<li><a href="#ajaxReq"><span class="bullet"></span>Requesty</a></li>
+		<li><a href="#iSigInterfaceUsage"><span class="bullet"></span>Zachytávání událostí</a></li>
+		<li><a href="#others"><span class="bullet"></span>Ostatní</a></li>
+	</ul>		
+
+	<h2 id="namespace">Jmenný prostor - JAK</h2>
+	<p>Veškerá funkčnost je skryta ve jmenném prostoru JAK, který je dostupný ihned při načtení skriptu knihovny.</p>
+
+	<h2 id="polyfills">Polyfilly</h2>
+	<p>Knihovna JAK obsahuje tzv. polyfilly, které přidávají do prohlížeče funkci/metodu, která není v prohlížeči nativně podporována. Pokud tedy Prohlížeč danou funkci podporuje, nic se nestane, ale pokud tuto funkci nemá nativně podporovanou, JAK jí přidá. Potom je možné tyto funkce používat cross-browser.</p>
+	
+		<h3>Function.prototype.bind(obj)</h3>
+		<p>Vrací funkci zbindovanou do zadaného kontextu. Zbylé volitelné parametry jsou předány volání vnitřní funkce. Více na webu mozilla.org</p>
+
+		<h3>Date.now()</h3>
+		<p>aktuální timestamp dle ES5</p>
+
+		<h3>Object.create()</h3>
+		<p>Vytvoří nový pobjekt. Očekává minimálně jeden parametr a to prototypový objekt, ostatní parametry jsou volitelné. Více na webu mozilla.org</p>
+		<h3>window.JSON</h3>
+		<p>Objekt pro práci s JSONem. Obsahuje dvě methody, první pro převod stringu na JSON objekt parse(string) a druhou, která provádí operaci opačně, tedy převod JSON objektu na string stringify(json).</p>
+</section>
+
+{% highlight html %}
+<section id="core">
+	<h1>Jádro</h1>
+	<p class="description">Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.</p>
+	<ul class="submenu two">
+		<li><a href="#namespace"><span class="bullet"></span>Jmenný prostor</a></li>
+		<li><a href="#prototypes"><span class="bullet"></span>Přidané prototypové metody</a></li>
+		<li><a href="#polyfills"><span class="bullet"></span>Polyfilly</a></li>
+		<li><a href="#classmaker"><span class="bullet"></span>OOP</a></li>
+		<li><a href="#events"><span class="bullet"></span>Události</a></li>
+		<li><a href="#clientDetect"><span class="bullet"></span>Detekce klienta</a></li>
+		<li><a href="#getElement"><span class="bullet"></span>Manipulace s DOM elementy</a></li>
+		<li><a href="#ajaxReq"><span class="bullet"></span>Requesty</a></li>
+		<li><a href="#iSigInterfaceUsage"><span class="bullet"></span>Zachytávání událostí</a></li>
+		<li><a href="#others"><span class="bullet"></span>Ostatní</a></li>
+	</ul>		
+
+	<h2 id="namespace">Jmenný prostor - JAK</h2>
+	<p>Veškerá funkčnost je skryta ve jmenném prostoru JAK, který je dostupný ihned při načtení skriptu knihovny.</p>
+
+	<h2 id="polyfills">Polyfilly</h2>
+	<p>Knihovna JAK obsahuje tzv. polyfilly, které přidávají do prohlížeče funkci/metodu, která není v prohlížeči nativně podporována. Pokud tedy Prohlížeč danou funkci podporuje, nic se nestane, ale pokud tuto funkci nemá nativně podporovanou, JAK jí přidá. Potom je možné tyto funkce používat cross-browser.</p>
+	
+		<h3>Function.prototype.bind(obj)</h3>
+		<p>Vrací funkci zbindovanou do zadaného kontextu. Zbylé volitelné parametry jsou předány volání vnitřní funkce. Více na webu mozilla.org</p>
+
+		<h3>Date.now()</h3>
+		<p>aktuální timestamp dle ES5</p>
+
+		<h3>Object.create()</h3>
+		<p>Vytvoří nový pobjekt. Očekává minimálně jeden parametr a to prototypový objekt, ostatní parametry jsou volitelné. Více na webu mozilla.org</p>
+		<h3>window.JSON</h3>
+		<p>Objekt pro práci s JSONem. Obsahuje dvě methody, první pro převod stringu na JSON objekt parse(string) a druhou, která provádí operaci opačně, tedy převod JSON objektu na string stringify(json).</p>
+</section>
+{% endhighlight %}

@@ -1,0 +1,23 @@
+---
+layout: default
+css: detail
+---
+{% for project in site.projects %}
+	{% if project.key == page.projectkey %}
+
+		<!--- Hlavní menu (automaticky generované na základě /_config.yml) -->
+		{% include detail/navigation.html %}
+		<div id="content">
+
+			<!--- Levý panel (automaticky generované na základě /_config.yml) -->
+			{% include documentation/panel.html %}
+
+			<!--- Obsah: /nazev-projektu/dokumentace/index.html -->
+			<article>
+				{{ content }}
+			</article>
+
+		</div>
+
+	{% endif %}
+{% endfor %}

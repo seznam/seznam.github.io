@@ -1,0 +1,19 @@
+---
+layout: default
+css: detail
+---
+{% for project in site.projects %}
+	{% if project.key == page.projectkey %}
+
+		<!--- Hlavní menu (automaticky generované na základě /_config.yml) -->
+		{% include detail/navigation.html %}
+
+		<!--- Informace o projektu + hlavní výhody (automaticky generované na základě /_config.yml) -->
+		{% include detail/information.html %}
+		{% include detail/features.html %}
+
+		<!--- DEMO: /nazev-projektu/index.html -->
+		{{ content }}
+				
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,10 @@
+<section id="features">
+	<p class="heading">Klíčové výhody</p>
+	{% for item in project.features %}
+		<article>
+			<h2>{{ item.title }}</h2>
+			<p>{{ item.perex }}</p>
+		</article>		
+	{% endfor %}
+</section>
+<div class="cleaner"></div>
