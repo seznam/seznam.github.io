@@ -2,7 +2,7 @@
 <html lang="cs" dir="ltr">
 	<head>
 		<meta charset="UTF-8">
-		<title>JAK Dokumentace</title>
+		<title>Test docs page</title>
 		<link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
 		<link href="/assets/css/highlighter.css" type="text/css" rel="stylesheet" />
 		
@@ -15,19 +15,19 @@
 
 		<!--- Hlavní menu (automaticky generované na základě /_config.yml) -->
 		<nav>
-	<a class="logo" href="/" title="Opensource projekty"><span>Opensource projekty</span></a> 
+	<a class="logo" href="/" title="Opensource projects"><span>Opensource projects</span></a> 
 	<ul class="menu">
 		
 			
-				<li><a title="JAK" href="/jak/index.html">JAK</a></li>			
+				<li><a title="Test project" href="/test/index.html">Test project</a></li>			
 			
 		
 			
-				<li><a title="Dokumentace" href="/jak/dokumentace/index.html" class="active">Dokumentace</a></li>
+				<li><a title="Tutorial" href="/test/documentation/index.html" class="active">Tutorial</a></li>
 			
 		
 			
-				<li><a title="Ke stažení" href="https://github.com/seznam/JAK">Ke stažení</a></li>			
+				<li><a title="Download" href="https://...">Download</a></li>			
 			
 		
 	</ul>
@@ -41,18 +41,60 @@
 			<aside id="panel">
 	<ul class="nav">
 		
-			<li class=""><a href="#installation">Instalace</a></li>
+			<li class=""><a href="#start">How to start?</a></li>
 		
-			<li class=""><a href="#hello">Hello World</a></li>
+			<li class=""><a href="#new-project">Add new project</a></li>
 		
-			<li class="last"><a href="#core">Jádro</a></li>
+			<li class=""><a href="#demo">Write project demo</a></li>
+		
+			<li class=""><a href="#demo">Write tutorial page</a></li>
+		
+			<li class="last"><a href="#jekyll">Jekyll modifications</a></li>
 				
 	</ul>
 </aside>
 
 			<!--- Obsah: /nazev-projektu/dokumentace/index.html -->
 			<article>
-				<section id="installation">
+				<section id="start">
+	<h1>Clone project</h1>
+	<p class="description">Project is hosted on Github pages so you have to clone it.</p>
+<div class="highlight"><pre><code class="bash">	git clone https://github.com/seznam/seznam.github.io
+</code></pre></div>
+</section>
+
+<section id="structure">
+	<h1>File structure</h1>
+	<p class="description">_includes, _layouts, _plugins, _site, assets, _config.yml?</p>
+	<h2>_config.yml</h2>
+	<p>Main configuration file, please read more about <a href="http://www.yaml.org/"><strong>YAML</strong></a>, it should be useful for you.
+	<h3>Global settings</h3>
+<div class="highlight"><pre><code class="yaml"><span class="l-Scalar-Plain">title</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Opensource projects</span>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://seznam.github.io</span>
+<span class="l-Scalar-Plain">description</span><span class="p-Indicator">:</span> <span class="p-Indicator">&gt;</span>
+    <span class="no">We provide our gimmicks for web development in the public space as open source.</span>
+<span class="l-Scalar-Plain">safe</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="l-Scalar-Plain">auto</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="l-Scalar-Plain">server</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="l-Scalar-Plain">server_port</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">4000</span>
+<span class="l-Scalar-Plain">baseurl</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/</span>
+<span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">http://localhost:4000</span>
+
+<span class="l-Scalar-Plain">source</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">.</span>
+<span class="l-Scalar-Plain">destination</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">./_site</span>
+<span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">./_plugins</span>
+
+<span class="l-Scalar-Plain">future</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="l-Scalar-Plain">lsi</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+<span class="l-Scalar-Plain">pygments</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">true</span>
+<span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">maruku</span>
+<span class="l-Scalar-Plain">permalink</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">date</span>
+</code></pre></div>
+
+</section>
+
+
+<section id="css">
 	<h1>Nadpis h1</h1>
 	<p class="description">Popis sekce</p>
 	<ul>
@@ -79,7 +121,7 @@
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
 </section>
 
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;installation&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;h1&gt;</span>Nadpis h1<span class="nt">&lt;/h1&gt;</span>
 	<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Popis sekce<span class="nt">&lt;/p&gt;</span>
 	<span class="nt">&lt;ul&gt;</span>
@@ -107,10 +149,27 @@
 <span class="nt">&lt;/section&gt;</span>
 </code></pre></div>
 			
-<section id="core">
+
+<section id="new-project">
+	<h1>New project</h1>
+	<p class="description">Adding a new project with Jekyll is quick and simply dummy!</p>
+	<ul class="three">
+		<li><a href="#config"><span class="bullet"></span>Modify _config.yml</a></li>
+		<li><a href="#"><span class="bullet"></span>Create index page</a></li>
+		<li><a href="#"><span class="bullet"></span>Write demo</a></li>
+	</ul>
+
+	<h2 id="config">Modify _config.yml</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+	
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+			
+<section id="example">
 	<h1>Jádro</h1>
 	<p class="description">Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.</p>
-	<ul class="submenu two">
+	<ul class="two">
 		<li><a href="#namespace"><span class="bullet"></span>Jmenný prostor</a></li>
 		<li><a href="#prototypes"><span class="bullet"></span>Přidané prototypové metody</a></li>
 		<li><a href="#polyfills"><span class="bullet"></span>Polyfilly</a></li>
@@ -144,7 +203,7 @@
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;core&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;h1&gt;</span>Jádro<span class="nt">&lt;/h1&gt;</span>
 	<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;description&quot;</span><span class="nt">&gt;</span>Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.<span class="nt">&lt;/p&gt;</span>
-	<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;submenu two&quot;</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;two&quot;</span><span class="nt">&gt;</span>
 		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#namespace&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;bullet&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Jmenný prostor<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#prototypes&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;bullet&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Přidané prototypové metody<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
 		<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#polyfills&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;bullet&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>Polyfilly<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
@@ -179,8 +238,6 @@
 			</article>
 
 		</div>
-
-	
 
 	
 

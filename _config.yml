@@ -1,11 +1,7 @@
-title: Opensource projekty
+title: Opensource projects
 url: http://seznam.github.io
 description: >
-    Naše zlepšováky pro vývoj webových aplikcí rádi poskytujeme do veřejného prostoru jako open source.
-author: Luboš Schrámek
-keywords: >
-  seznam, opensource
-
+    We provide our gimmicks for web development in the public space as open source.
 safe: false
 auto: true
 server: false
@@ -27,63 +23,49 @@ permalink: date
 # Seznam projektů
 projects:
   
-  # JAK
-  - key: jak      
-    title: JAK
-    url: /jak/index.html
+  # Testovací projekt
+  - key: test      
+    title: TEST project
+    url: /test/index.html
     description: >
-        Kompletní a jednoduchý systém volně provázaných knihoven, usnadňující práci v prostředí jazyka JavaScript.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
     keywords: >
-        jak,javascript
-    version: 2.0
+        test,new
+    version: 1.0 beta
     download: https://github.com/seznam/JAK  
     features:
-      - title: Detekce klienta a prostředí
+      - title: Code highlighter
         perex: >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
-      - title: Detekce klienta a prostředí
+      - title: CSS pre-defined
         perex: >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
-      - title: Detekce klienta a prostředí
+      - title: HTML5 doc structure
         perex: >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.            
     menu:
       - link:
-        title: "JAK"
-        url: "/jak/index.html"
+        title: "Test project"
+        url: "/test/index.html"
       - link:
-        title: "Dokumentace"
-        url: "/jak/dokumentace/index.html"
+        title: "Tutorial"
+        url: "/test/documentation/index.html"
       - link:
-        title: "Ke stažení"
-        url: "https://github.com/seznam/JAK"
+        title: "Download"
+        url: "https://..."
     panel:
       - link:
-        title: Instalace
-        url: "#installation"
+        title: How to start?
+        url: "#start"    
       - link:
-        title: Hello World
-        url: "#hello"
+        title: Add new project 
+        url: "#new-project"
       - link:
-        title: "Jádro"
-        url: "#core"
-  # TEng        
-  - key: teng
-    title: TEng
-    url: /teng/index.html
-    description: >
-        Blábol
-    keywords: >
-        jak,javascript
-    version: 2.0
-    download: https://github.com/seznam/JAK  
-    menu:
+        title: Write project demo
+        url: "#demo"
       - link:
-        title: JAK
-        url: /jak/index.html
+        title: Write tutorial page
+        url: "#demo"        
       - link:
-        title: Dokumentace
-        url: /jak/dokumentace/index.html
-      - link:
-        title: Ke stažení
-        url: https://github.com/seznam/JAK
+        title: Jekyll modifications
+        url: "#jekyll"

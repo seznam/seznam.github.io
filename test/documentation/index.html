@@ -1,9 +1,50 @@
 ---
 layout: documentation
-projectkey: jak
-title: JAK Dokumentace
+projectkey: test
+title: Test docs page
 ---
-<section id="installation">
+
+<section id="start">
+	<h1>Clone project</h1>
+	<p class="description">Project is hosted on Github pages so you have to clone it.</p>
+{% highlight bash %}
+	git clone https://github.com/seznam/seznam.github.io
+{% endhighlight %}
+</section>
+
+<section id="structure">
+	<h1>File structure</h1>
+	<p class="description">_includes, _layouts, _plugins, _site, assets, _config.yml?</p>
+	<h2>_config.yml</h2>
+	<p>Main configuration file, please read more about <a href="http://www.yaml.org/"><strong>YAML</strong></a>, it should be useful for you.
+	<h3>Global settings</h3>
+{% highlight yaml %}
+title: Opensource projects
+url: http://seznam.github.io
+description: >
+    We provide our gimmicks for web development in the public space as open source.
+safe: false
+auto: true
+server: false
+server_port: 4000
+baseurl: /
+url: http://localhost:4000
+
+source: .
+destination: ./_site
+plugins: ./_plugins
+
+future: true
+lsi: false
+pygments: true
+markdown: maruku
+permalink: date
+{% endhighlight %}
+
+</section>
+
+
+<section id="css">
 	<h1>Nadpis h1</h1>
 	<p class="description">Popis sekce</p>
 	<ul>
@@ -31,7 +72,7 @@ title: JAK Dokumentace
 </section>
 
 {% highlight html %}
-<section id="installation">
+<section id="css">
 	<h1>Nadpis h1</h1>
 	<p class="description">Popis sekce</p>
 	<ul>
@@ -59,10 +100,27 @@ title: JAK Dokumentace
 </section>
 {% endhighlight %}
 			
-<section id="core">
+
+<section id="new-project">
+	<h1>New project</h1>
+	<p class="description">Adding a new project with Jekyll is quick and simply dummy!</p>
+	<ul class="three">
+		<li><a href="#config"><span class="bullet"></span>Modify _config.yml</a></li>
+		<li><a href="#"><span class="bullet"></span>Create index page</a></li>
+		<li><a href="#"><span class="bullet"></span>Write demo</a></li>
+	</ul>
+
+	<h2 id="config">Modify _config.yml</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+	
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+			
+<section id="example">
 	<h1>Jádro</h1>
 	<p class="description">Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.</p>
-	<ul class="submenu two">
+	<ul class="two">
 		<li><a href="#namespace"><span class="bullet"></span>Jmenný prostor</a></li>
 		<li><a href="#prototypes"><span class="bullet"></span>Přidané prototypové metody</a></li>
 		<li><a href="#polyfills"><span class="bullet"></span>Polyfilly</a></li>
@@ -97,7 +155,7 @@ title: JAK Dokumentace
 <section id="core">
 	<h1>Jádro</h1>
 	<p class="description">Na této stránce jsou popsány jednotlivé části JAvascriptové Knihovny.</p>
-	<ul class="submenu two">
+	<ul class="two">
 		<li><a href="#namespace"><span class="bullet"></span>Jmenný prostor</a></li>
 		<li><a href="#prototypes"><span class="bullet"></span>Přidané prototypové metody</a></li>
 		<li><a href="#polyfills"><span class="bullet"></span>Polyfilly</a></li>
