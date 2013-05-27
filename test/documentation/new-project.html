@@ -1,0 +1,197 @@
+---
+layout: documentation
+projectkey: test
+title: Přidání nového projektu
+panel:
+  - link:
+    title: Úprava _config.yml
+    url: "#config"
+  - link:
+    title: Vytvoření adresáře
+    url: "#adresar"    
+  - link:
+    title: HTML šablony
+    url: "#sablony"
+  - link:
+    title: Typografie obsahu
+    url: "#css"    
+---
+<section id="new-project">
+	<h1>Nový projekt</h1>
+	<p class="description">Vytvoření nového projektu je s Jekyllem velmi jednoduché.</p>
+</section>
+
+<section id="config">
+	<h2>Úprava _config.yml</h2>
+	<p>Hlavní konfigurační soubor, viz. <a href="http://www.yaml.org/"><strong>YAML</strong></a>.</p>
+{% highlight bash %}
+# Seznam projektů
+projects:
+  
+  # Testovací projekt
+
+    # Klíč projektu 
+  - key: Testovací	
+
+    # Title 			    
+    title: Seznam opensource
+
+    # Cesta k index.html 	
+    url: /test/index.html 	
+
+    # Popis projektu (zobrazí se na HP a v detailu projektu)	
+    description: >				
+        Projekt, na kterém se snažíme ukázat práci s Jekyllem, vytvoření nového projektu do služby Opensource Seznam.
+
+    # Klíčová slova    
+    keywords: >					
+        opensource,showcase,project
+
+    # Informace o verzi
+    version: 1.2 				
+
+    # Odkaz ke stažení
+    download: https://github.com/seznam/seznam.github.io.git 	
+
+    # Výhody použití (zobrazí se v detailu projektu)
+    features: 					
+      - title: Jekyll
+        perex: >
+            Transformuje plain text na statické webové stránky a blog.
+      - title: Pygments highlighter
+        perex: >
+            Zvýrazňovač syntaxí v Pythonu s podporou 100 jazyků.
+      - title: Pre-defined layouts
+        perex: >
+            Předchystané šablony pro jednotlivé části projektů.
+
+    # Navigační lišta
+    menu: 						
+      - link:
+        title: "About"
+        url: "/test/index.html"
+      - link:
+        title: "Začínáme"
+        url: "/test/documentation/index.html"
+      - link:
+        title: "Vytvoření nového projektu"
+        url: "/test/documentation/new-project.html"
+{% endhighlight %}
+</section>
+
+<section id="adresar">
+	<h2>Adresář projektu</h2>
+	<p>V rootu je nutné vytvořit adresář se stejným názvem jako je key v _config.yml.</p>
+</section>
+
+<section id="sablony">
+	<h2>HTML šablony</h2>
+	<h3>ROOT/klic_projektu/index.html</h3>
+	<p>Kromě nastavení se zde píše demo, které se zobrazuje v detailu projektu na úvodní stránce.</p>
+{% highlight html %}
+---
+# Výběr šablony
+layout: detail
+
+# Klíč projektu (stejný jako v _config.yml)
+projectkey: test
+
+# Title (přetíží ten v _config.yml)
+title: Seznam Opensource showcase
+---
+<section id="examples">
+	<p class="heading">Demo</p>
+	<article class="example">
+		:-)
+	</article>
+</div>
+{% endhighlight %}
+
+	<h3>ROOT/klic_projektu/documentation/index.html</h3>
+	<p>Pokud bude url v definici panelu odkazovat na kotvu, tak se menu bude při scrollování v obsahu automaticky označovat.<br />HTML se píše do jednotlivých sekcí, strukturovaně pod sebe.</p>
+{% highlight html %}
+---
+# Výběr šablony
+layout: documentation
+
+# Klíč projektu (stejný jako v _config.yml)
+projectkey: test
+
+# Title (přetíží ten v _config.yml)
+title: Test docs page
+
+# Definice levého panelu
+panel:
+  - link:
+    title: Clone project
+    url: "#clone"
+  - link:
+    title: Jekyll
+    url: "#jekyll"    
+---
+<section id="clone">
+...
+</section>
+
+<section id="jekyll">
+..	
+</section>
+{% endhighlight %}
+</section>
+
+
+<section id="css">
+	<h1>Nadpis h1</h1>
+	<p class="description">Popis sekce</p>
+	<ul>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<ul class="two">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+	</ul>	
+	<ul class="three">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<h2>Nadpis h2</h2>
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+
+{% highlight html %}
+<section id="css">
+	<h1>Nadpis h1</h1>
+	<p class="description">Popis sekce</p>
+	<ul>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<ul class="two">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+	</ul>	
+	<ul class="three">
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 1</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 2</a></li>
+		<li><a href="#"><span class="bullet"></span>Položka 3</a></li>
+	</ul>
+	<h2>Nadpis h2</h2>
+	<h3>Nadpis h3</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ante neque, posuere ac porta id, lacinia sit amet turpis. Vestibulum hendrerit dapibus lorem ac tempor. Vivamus rutrum sollicitudin placerat.</p>
+</section>
+{% endhighlight %}

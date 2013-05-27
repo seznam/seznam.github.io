@@ -25,47 +25,31 @@ projects:
   
   # Testovací projekt
   - key: test      
-    title: TEST project
+    title: Seznam Opensource
     url: /test/index.html
     description: >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
+        Projekt, na kterém se snažíme ukázat práci s Jekyllem, vytvoření nového projektu do služby Opensource Seznam.
     keywords: >
-        test,new
-    version: 1.0 beta
-    download: https://github.com/seznam/JAK  
+        opensource,showcase,project
+    version: 1.2
+    download: https://github.com/seznam/seznam.github.io.git
     features:
-      - title: Code highlighter
+      - title: Jekyll
         perex: >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
-      - title: CSS pre-defined
+            Transformuje plain text na statické webové stránky a blog.
+      - title: Pygments highlighter
         perex: >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.
-      - title: HTML5 doc structure
+            Zvýrazňovač syntaxí v Pythonu s podporou 100 jazyků.
+      - title: Pre-defined layouts
         perex: >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis porta ligula, a consectetur purus malesuada nec.            
+            Předchystané šablony pro jednotlivé části projektů.
     menu:
       - link:
-        title: "Test project"
+        title: "About"
         url: "/test/index.html"
       - link:
-        title: "Tutorial"
+        title: "Začínáme"
         url: "/test/documentation/index.html"
       - link:
-        title: "Download"
-        url: "https://..."
-    panel:
-      - link:
-        title: How to start?
-        url: "#start"    
-      - link:
-        title: Add new project 
-        url: "#new-project"
-      - link:
-        title: Write project demo
-        url: "#demo"
-      - link:
-        title: Write tutorial page
-        url: "#demo"        
-      - link:
-        title: Jekyll modifications
-        url: "#jekyll"
+        title: "Vytvoření nového projektu"
+        url: "/test/documentation/new-project.html"

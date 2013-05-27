@@ -83,39 +83,93 @@ header
 
 	aside
 
-		&.affix, .affix-top
+		&.affix, &.affix-top, &.affix-bottom
 			position: fixed
 			top: 100px
 
-		&.affix-bottom
-			position: absolute
-			bottom: 270px
-			top: auto
-
 		.nav
+			@include borderRadius(6px 0 0 0)
 			border: 1px solid #CDCDCD
-			border-radius: 6px 6px 6px 6px
 			float: left
 			list-style-type: none
 			margin: 0
 			padding: 0
 			width: 250px
+			background: #F0F1F4
 
 			li 
+				float: left
+				width: 250px
+				height: 40px
 				border-bottom: 1px solid #CDCDCD
-				padding: 10px 20px
 
-				&.last
-					border: none
-
-				&.active
+				&.item
 
 					a
-						color: $redColor
+						padding: 10px 20px
+						display: block
+						color: $grayColor
+						text-decoration: none
+					
+					&.active
+						width: 251px
+						background: url("/assets/img/arrows.gif") no-repeat scroll 225px -210px #fff
 
-				a
-					color: $grayColor
-					text-decoration: none
+						a
+							color: $redColor					
+
+					&:hover
+
+						a
+							color: $redColor
+
+					&.first-visible
+						@include borderRadius(6px 0 0 0)
+
+					&.last
+						border: none
+
+
+		#arrows
+			@include borderRadius(0 0 0 6px)
+			float: left
+			border-bottom: 1px solid #CDCDCD	
+			padding: 0
+			height: 32px
+			width: 250px
+			background: #F0F1F4
+			display: none
+			border-left: 1px solid #CDCDCD
+			border-right: 1px solid #CDCDCD
+
+			.arrow
+				width: 125px
+				height: 32px
+				cursor: pointer
+				background: url("/assets/img/arrows.gif") no-repeat scroll 0 0 transparent
+
+				&.prev
+					@include borderRadius(0 0 0 6px)
+					float: left
+					background-position: center -116px
+
+					&.active
+						background-position: center 12px
+						background-color: #fff
+						
+						&:hover
+							background-position: center -52px
+
+				&.next
+					float: right
+					background-position: center -148px
+
+					&.active
+						background-position: center -20px
+						background-color: #fff
+
+						&:hover
+							background-position: center -84px
 
 	article
 		float: right
@@ -129,8 +183,7 @@ header
 			font-size: 24px
 			font-weight: bold
 			margin: -100px auto 0 auto
-			padding-top: 100px
-			text-align: center
+			padding-top: 120px
 			text-transform: uppercase	
 			
 		.description
@@ -164,22 +217,34 @@ header
 					text-decoration: none
 
 				.bullet
+					@include borderRadius(0 0 0 6px)
 					float: left
 					margin-right: 10px
 					width: 10px
 					height: 10px
 					border-left: 1px solid #CDCDCD
 					border-bottom: 1px solid #CDCDCD
-					border-radius: 0px 0px 0px 6px
 					margin-top: 3px
 
 		.highlight
+			@include borderRadius(3px)
 			background: #F0F1F4
 			border: 1px solid #CDCDCD
-			@include borderRadius(3px)
 			padding: 10px
 			margin: 15px 0
 
 			pre
 				margin: 0
 				overflow: auto
+
+.jcarousel-container-vertical
+	height: 245px
+	padding: 40px 20px
+	width: 75px				
+
+.jcarousel-clip-vertical
+	height: 245px
+	width: 75px
+
+.jcarousel-clip
+	overflow: hidden
