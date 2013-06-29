@@ -1,0 +1,219 @@
+---
+layout: documentation
+projectkey: shallocator
+title: Examples
+panel:
+  - link:
+    title: Two processes sharing a set
+    url: "#example"
+---
+<section id="example">
+    <h1>Example</h1>
+    <p class="description">Two communicating processes</p>
+    <p>The example here shows two communicating processes that share a std::set. The first process fills the std::set and after it ends, the second iterates it through and lists imposed values to std::cout. Communication is synchronized using the standard mutex created via SYSV semaphores.</p>
+{% highlight cpp on%}
+#include <mm.h>;
+#include <cerrno>;
+#include <cstdlib>
+#include <iostream>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <sys/types.h>
+#include <shallocator/shset.h>
+#include <shallocator/shmemory.h>
+#include <shallocator/shstring.h>
+
+#ifdef _SEM_SEMUN_UNDEFINED  // see sys/sem.h
+
+union semun {
+    int              val;    // value for SETVAL
+    struct semid_ds *buf;    // buffer for IPC_STAT, IPC_SET
+    unsigned short  *array;  // array for GETALL, SETALL
+    struct seminfo  *__buf;  // buffer for IPC_INFO (Linux-specific)
+};
+
+#endif // _SEM_SEMUN_UNDEFINED
+
+/** 
+ * @short Holder for sem set id.
+ */
+class SemSetIdHolder_t {
+public:
+    SemSetIdHolder_t(int semsetid)
+        : semsetid(semsetid), hold(true)
+    {
+        // check semaphore set id
+        if (semsetid < 0) {
+            fprintf(stderr, "semget: %s\n", strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    /** 
+     * @short Deallocate semaphore set.
+     */
+    ~SemSetIdHolder_t() {
+        if (hold) {
+            if (semctl(semsetid, 0, IPC_RMID, 0)) {
+                fprintf(stderr, "semctl: %s\n", strerror(errno));
+                exit(EXIT_FAILURE);
+            }
+        }
+    }
+
+    operator int() const { return semsetid;}
+
+    void release() { hold = false;}
+
+private:
+    int semsetid;
+    bool hold;
+};
+
+/** 
+ * @short IPC semaphore mutex.
+ */
+class Mutex_t {
+public:
+    /** 
+     * @short Allocate new semaphore set.
+     */
+    Mutex_t()
+        : semsetid(semget(IPC_PRIVATE, 1, IPC_CREAT | 0600))
+    {
+        // init semaphore
+        union semun arg;
+        arg.val = 1;
+        if ((semctl(semsetid, 0, SETVAL, arg)) < 0) {
+            fprintf(stderr, "semctl: %s\n", strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void lock() {
+        // prepare structure for lock
+        struct sembuf op = { 0, -1, SEM_UNDO};
+
+        // lock
+        if (TEMP_FAILURE_RETRY(semop(semsetid, &op, 1)) < 0) {
+            fprintf(stderr, "semop: %s\n", strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void unlock() {
+        // prepare structure for unlock
+        struct sembuf op = { 0, +1, SEM_UNDO};
+
+        // unlock
+        if (TEMP_FAILURE_RETRY(semop(semsetid, &op, 1)) < 0) {
+            fprintf(stderr, "semop: %s\n", strerror(errno));
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    void release() { semsetid.release();}
+
+private:
+    Mutex_t(const Mutex_t &);
+    Mutex_t &operator=(const Mutex_t &);
+
+    SemSetIdHolder_t semsetid;
+};
+
+/** 
+ * @short Scope locker.
+ */
+class Lock_t {
+public:
+    Lock_t(Mutex_t &mutex): mutex(mutex) { mutex.lock();}
+    ~Lock_t() { mutex.unlock();}
+
+private:
+    Lock_t(const Lock_t &);
+    Lock_t &operator=(const Lock_t &);
+    Mutex_t &mutex;
+};
+
+/** 
+ * @short Shared memmory pool holder.
+ */
+class SHPool_t {
+public:
+    SHPool_t(): hold(true) { MM_create(1024, 0);}
+    ~SHPool_t() { if (hold) MM_destroy();}
+    void release() { hold = false;}
+
+private:
+    SHPool_t(const SHPool_t &);
+    SHPool_t &operator=(const SHPool_t &);
+    bool hold;
+};
+
+/** 
+ * @short Usage example.
+ */
+void process(SHAllocator::shauto_ptr
+             <SHAllocator::shset<SHAllocator::shstring> > set,
+             SHPool_t &pool, Mutex_t &mutex) {
+    // if I'm first the set is empty
+    if (set->empty()) {
+        // prepare some value
+        char buffer[1024];
+        snprintf(buffer, sizeof(buffer), "%d", getpid());
+
+        // store value in set
+        set->insert(buffer);
+
+        // I shouldn't destroy set since other process is going to work with it
+        set.release();
+        pool.release();
+        mutex.release();
+
+    } else {
+        // dump data to std::cout
+        for (SHAllocator::shset<SHAllocator::shstring>::const_iterator
+                iset = set->begin(), eset = set->end();
+                iset != eset; ++iset) {
+            std::cout << getpid() << ": " << *iset << std::endl;
+        }
+    }
+}
+
+/** 
+ * @short The main.
+ */
+int main(int /*argc*/, char ** /*argv*/) {
+
+    // allocate space for new allocator
+    SHPool_t pool;
+
+    // get new mutex
+    Mutex_t mutex;
+
+    // create new set container and store new pointer into auto_ptr
+    SHAllocator::shauto_ptr<SHAllocator::shset<SHAllocator::shstring> > set
+       (new (SHAllocator::SHAlloc) SHAllocator::shset<SHAllocator::shstring>());
+
+    // do fork - don't care about errors ;-)
+    if (!fork()) {
+        // in child lock mutex first
+        Lock_t lock(mutex);
+
+        // try insert if child lock mutex first or dump data and destroy
+        // all resources
+        process(set, pool, mutex);
+
+    } else {
+        // in parent lock mutex first too
+        Lock_t lock(mutex);
+
+        // try insert if parent lock mutex first or dump data and destroy
+        // all resources
+        process(set, pool, mutex);
+    }
+
+    return EXIT_SUCCESS;
+}
+{% endhighlight %}
+</section>

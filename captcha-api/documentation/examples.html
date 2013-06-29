@@ -1,0 +1,59 @@
+---
+layout: documentation
+projectkey: captcha-api
+title: Examples
+panel:
+  - link:
+    title: HTTP interface in Python
+    url: "#pyhttp"
+  - link:
+    title: FRPC interface in Python
+    url: "#pyfrpc"
+---
+<section id="pyhttp">
+    <h1>Examples</h1>
+    <p class="description">Using HTTP interface in Python</p>
+
+{% highlight python on %}
+import captcha
+cap = captcha.CaptchaHTTP()
+cap.create()
+# returns a hash that is used to generate the CAPTCHA image
+# e.g. '8TP8DEMLT4'
+{% endhighlight %}
+
+    <p>The following example shows how to insert the CAPTCHA image into the page:</p>
+{% highlight html on %}
+
+<img src="http://captcha.seznam.cz/captcha.getImage?hash=${captchaHash}">
+{% endhighlight %}
+
+    <p>The following example shows how to insert the CAPTCHA audio file into the page:</p>
+
+{% highlight html on %}
+<a href="http://captcha.seznam.cz/captcha.getAudio?hash=${captchaHash}">
+{% endhighlight %}
+    <p>The checking code is very simple (the values of captchaHash and captchaCode must be sent from a form by the web browser):</p>
+
+{% highlight python on %}
+import captcha
+cap = captcha.CaptchaHTTP()
+if not cap.check(captchaHash, captchaCode):
+    # Error - code from the image was not entered correctly.
+    # Add logic that handles the wrong CAPTCHA code.
+{% endhighlight %}
+</section>
+
+<section id="pyfrpc">
+    <p class="description">Using FRPC interface in Python</p>
+    <p>The API can be used directly using the XML-RPC (FastRPC) interface. The use is similar to the previous example, you only need to create an CaptchaRCP() object. The RPC interface has the following methods:</p>
+
+{% highlight python on %}
+captcha.create()
+captcha.getImage(string hash)
+captcha.getAudio(string hash)
+captcha.check(string hash, string code)
+{% endhighlight %}
+</section>
+
+

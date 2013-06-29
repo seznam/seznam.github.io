@@ -1,7 +1,7 @@
 title: Opensource projects
 url: http://seznam.github.io
 description: >
-    We provide our gimmicks for web development in the public space as open source.
+    This is the home of Seznam's contributions to the open source community
 safe: false
 auto: true
 server: false
@@ -24,32 +24,207 @@ permalink: date
 projects:
   
   # Testovací projekt
-  - key: test      
-    title: Seznam Opensource
-    url: /test/index.html
+#  - key: test      
+#    title: Seznam Opensource
+#    url: /test/index.html
+#    description: >
+#        Projekt, na kterém se snažíme ukázat práci s Jekyllem, vytvoření nového projektu do služby Opensource Seznam.
+#    keywords: >
+#        opensource,showcase,project
+#    version: 1.2
+#    download: https://github.com/seznam/seznam.github.io.git
+#    features:
+#      - title: Jekyll
+#        perex: >
+#            Transformuje plain text na statické webové stránky a blog.
+#      - title: Pygments highlighter
+#        perex: >
+#            Zvýrazňovač syntaxí v Pythonu s podporou 100 jazyků.
+#      - title: Pre-defined layouts
+#        perex: >
+#            Předchystané šablony pro jednotlivé části projektů.
+#    menu:
+#      - link:
+#        title: "About"
+#        url: "/test/index.html"
+#      - link:
+#        title: "Začínáme"
+#        url: "/test/documentation/index.html"
+#      - link:
+#        title: "Vytvoření nového projektu"
+#        url: "/test/documentation/new-project.html"
+
+  # FastRPC + Netcat
+  - key: frpc
+    title: FastRPC
+    url: /frpc/index.html
     description: >
-        Projekt, na kterém se snažíme ukázat práci s Jekyllem, vytvoření nového projektu do služby Opensource Seznam.
+        FastRPC is a XML-RPC based protocol that uses binary data serialization format. Includes C++ and Python implementations and a console client.
     keywords: >
-        opensource,showcase,project
-    version: 1.2
-    download: https://github.com/seznam/seznam.github.io.git
+        opensource,fastrpc,xml-rpc
     features:
-      - title: Jekyll
+      - title: Binary data format
         perex: >
-            Transformuje plain text na statické webové stránky a blog.
-      - title: Pygments highlighter
+            Based on XML-RPC. Uses HTTP as transport protocol.
+      - title: C++ and Python libraries
         perex: >
-            Zvýrazňovač syntaxí v Pythonu s podporou 100 jazyků.
-      - title: Pre-defined layouts
+            Libraries support both FastRPC and XML-RPC. Data format negotiated via the HTTP content negotiation.
+      - title: Fast-RPC Netcat
         perex: >
-            Předchystané šablony pro jednotlivé části projektů.
+            Command-line utility for development, debugging and administration purposes.
     menu:
       - link:
         title: "About"
-        url: "/test/index.html"
+        url: "/frpc/index.html"
       - link:
-        title: "Začínáme"
-        url: "/test/documentation/index.html"
+        title: "Examples"
+        url: "/frpc/documentation/examples.html"
       - link:
-        title: "Vytvoření nového projektu"
-        url: "/test/documentation/new-project.html"
+        title: "FastRPC-Netcat"
+        url: "/frpc/documentation/netcat.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/fastrpc"
+
+  # SHAllocator
+  - key: shallocator
+    title: SHAllocator
+    url: /shallocator/index.html
+    description: >
+        SHAllocator is a C++ library that implements an STL allocator in SYSV shared memory.
+    keywords: >
+        opensource,libmm
+    features:
+      - title: Based on libmm 
+        perex: >
+            Libmm is used for the actual memory allocation
+      - title: Support for all STL containers
+        perex: >
+            The library offers support for all types of STL containers (except for std::bitset) under identical names prefixed with sh.
+      - title: new and destroy() 
+        perex: >
+            The library offers a placement operator new for variable allocation and function destroy() for releasing memory
+    menu:
+      - link:
+        title: "About"
+        url: "/shallocator/index.html"
+      - link:
+        title: "Examples"
+        url: "/shallocator/documentation/examples.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/shallocator"
+
+  # TEng
+  - key: teng
+    title: TEng
+    url: /teng/index.html
+    description: >
+        TEng is a general purpose templating engine for C++ and Python. Especially useful for C++ apps that need to render dynamic HTML content.
+    keywords: >
+        opensource,teng,templating
+    features:
+      - title: Easy-to-use API
+        perex: >
+            TEng is available as a C++ library and a Python module
+      - title: L10n support
+        perex: >
+            TEng's built-in localization support makes it easier to build sites with multiple language versions
+      - title: Template caching
+        perex: >
+            Compiled templates are cached by the engine to speed up page processing
+    menu:
+      - link:
+        title: "About"
+        url: "/teng/index.html"
+#      - link:
+#        title: "Usage Guide"
+#        url: "/teng/documentation/manual.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/teng"
+
+  # JAK
+  - key: jak
+    title: JAK
+    url: /jak/index.html
+    description: >
+        JAK is a compact and simple object-oriented JavaScript framework that provides a simple solution to the most common and tedious tasks when working with HTML, DOM and AJAX.
+    keywords: >
+        opensource,jak,JavaScript,framework
+    features:
+      - title: Detection & Events
+        perex: >
+            JAK provides funtions to detect the client and environment. The library also offers easy-to-use tools to work with events
+      - title: DOM and HTML
+        perex: >
+            JAK simplifies the most common tasks when working with DOM and HTML
+      - title: AJAX
+        perex: >
+            JAK makes it easy to work with XMLHTTPREQUEST
+    menu:
+      - link:
+        title: "About"
+        url: "/jak/index.html"
+#      - link:
+#        title: "Usage Guide"
+#        url: "/jak/documentation/manual.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/JAK"
+
+  # CAPTCHA API
+  - key: captcha-api
+    title: CAPTCHA API
+    url: /captcha-api/index.html
+    description: >
+        A set of wrappers that bring Seznam's CAPTCHA API to your web apps.
+    keywords: >
+        opensource,captcha,api
+    features:
+      - title: Multiple protocols
+        perex: >
+            Seznam's CAPTCHA supports HTTP, XML-RPC and FastRPC API
+      - title: Audio support
+        perex: >
+            Supports audio CAPTCHA for vision impaired users
+      - title: Python and PHP
+        perex: >
+            Wrappers are available for Python and PHP
+    menu:
+      - link:
+        title: "About"
+        url: "/captcha-api/index.html"
+      - link:
+        title: "Examples"
+        url: "/captcha-api/documentation/examples.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/captcha-api"
+
+  # Sklik API
+  - key: sklik-api
+    title: Sklik API
+    url: /sklik-api/index.html
+    description: >
+        Client library for the API exposed by Seznam's Sklik PPC advertising system.
+    keywords: >
+        opensource,sklik,api
+    features:
+      - title: Python module
+        perex: >
+            Python wrapper around the XML-RPC API. Start developing apps without bothering with parsing protocol messages.
+      - title: Free yourself from the Sklik client portal
+        perex: >
+            Manage your campaigns, ads, keywords and conversions easily from within your applications.
+      - title: Generate reports
+        perex: >
+            Get access to your statistics and generate custom reports.
+    menu:
+      - link:
+        title: "About"
+        url: "/sklik-api/index.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/sklik-api-python-client"
+

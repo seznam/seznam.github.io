@@ -1,0 +1,46 @@
+---
+layout: detail
+projectkey: teng
+title: TEng
+---
+<section id="overview">
+    <p class="heading">Overview</p>
+    <article class="example">
+        <p>
+Teng is a general purpose templating engine (whence Teng). Teng is primary a C++ library with easy-to-use API but it is also available as a Python module.
+        </p>
+        <p>
+Teng strictly separates application logic from presentation logic. Programmer writes code that fetches data (for example from database, application server etc.) and supplies them to the templating engine. Presentation coder (for example a web designer) writes templates and doesn't bother about the data origin. The only thing programmer and presentation coder must obey is that the data structure must conform to the template.
+        </p>
+
+        <p>
+Probably the most important use of Teng is generating HTML pages for web presentations. It is also wery useful for generating mail messages (but not spams).
+        </p>
+
+        <p>
+Teng composes resulting text/page/file by combining input template with program supplied data together with (optional) configuration and localization (language) dictionary.
+        </p>
+
+        <p>
+Localization support of Teng allows you to just write a single set of templates for any number of supported languages.
+        </p>
+
+        <p>
+Templates and dictionaries are cached by engine for further use.
+        </p>
+    </article>
+</section>
+<section id="technicalities">
+    <p class="heading">How it works</p>
+    <article class="example">
+        <p>
+Every template before is compiled into so-called byte-code before it being used for generating a page. Byte-code is a sequence of instructions for the Teng's engine. During page generation, the engine executes instructions from the byte-code and writes the result to the output.
+        </p>
+        <p>
+Every parsed dictionary and every compiled template is cached by the engine for further use. If the engine finds a corresponding cache entry for a given combination &lt;template, language dictionary, configuration&gt; it checks every source template, language dictionary and configuration for change. When no change is found, the cached compiled template and dictionaries are used. Invalidated (sources have been changed) entries are read and parsed before execution.
+        </p>
+        <p>
+More precisely, there are two caches. One maps main dictionary filename to parsed dictionary (either language or configuration) and the other maps template key to compiled program. Template key is a triplet (template, language dictionary, configuration); template is either a template filename or an MD5 hash computed from the template itself.
+        </p>
+    </article>
+</section>
