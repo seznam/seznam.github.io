@@ -6,9 +6,15 @@ title: Seznam CAPTCHA API
 <section id="overview">
     <p class="heading">Overview</p>
     <article class="example">
-        <p>CAPTCHA is a mechanism that helps protecting web forms from various malicious attacks of web robots. Seznam.cz provides its CAPTCHA service for public use through an open API. The service provides HTTP, XML-RPC and FastRPC interfaces.</p>
-        <p> The HTTP interface is available at the following URL: http://captcha.seznam.cz. FastRPC and XML-RPC interfaces are available at the following URL: http://captcha.seznam.cz:3410. 
-        <p>Usage limits are set as follows: the maximum number of requests is limited to 500 rq in 10 seconds, or 1000 rq in 60 seconds.</p>
+        <p>CAPTCHA is a mechanism that helps protecting web forms from various malicious attacks of web robots. Seznam.cz provides its CAPTCHA service for public use through an open API. The service provides HTTP/HTTPS, XML-RPC and FastRPC interfaces.</p>
+        <p>The interfaces are available at following URLs:</p>
+        <ul>
+            <li>HTTP: http://captcha.seznam.cz.</li>
+            <li>HTTPS: https://captcha.seznam.cz.</li>
+            <li>FastRPC and XML-RPC: http://captcha.seznam.cz:3410</li>
+        </ul>
+        <p> 
+        <p>The usage limits are set to maximum 200 request in 60 seconds.</p>
         <p>The CAPTCHA server provides also Audio Captcha functionality (letters and numbers that the browser will play) for all symbols that may appear in the CAPTCHA image. This function helps you make your web pages accessible for vision impaired users.
         </p>
         <p>We provide modules for Python and PHP that wrap the API and make it super easy to use Seznam's CAPTCHA in your web apps.</p>
