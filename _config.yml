@@ -253,3 +253,19 @@ projects:
       - link:
         title: "Find me at GitHub"
         url: "https://github.com/seznam/sklik-api-python-client"
+
+  # IMA.js
+  - key: ima-js
+    title: IMA.js
+    url: /ima-js/index.html
+    description: >
+        The IMA.js is a application development stack for developing isomorphic applications written in pure JavaScript.
+    keywords: >
+        opensource,ima-js,JavaScript,framework,isomorphic
+    menu:
+      - link:
+        title: "About"
+        url: "/ima-js/index.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/IMA.js-skeleton"
