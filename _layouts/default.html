@@ -5,6 +5,7 @@
 		<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 		<link href="/assets/css/base.css" type="text/css" rel="stylesheet" />
 		<link href="/assets/css/highlighter.css" type="text/css" rel="stylesheet" />
+		<!-- {{page.css}} -->
 		{% if page.css %}
 			<link href="/assets/css/{{page.css}}.css" type="text/css" rel="stylesheet" />
 		{% endif %}
