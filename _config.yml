@@ -203,6 +203,31 @@ projects:
         title: "Find me at GitHub"
         url: "https://github.com/seznam/captcha-api"
 
+  # Euphoria
+  - key: euphoria
+    url: /euphoria/index.html
+    title: Euphoria
+    description: >
+        Euphoria is an open source Java API for creating unified big-data processing flows. It provides an engine independent programming model which can express both batch and stream transformations.
+    keywords: >
+        opensource,big-data,java,flink,spark,hadoop,kafka,hdfs
+    features:
+      - title: Unified business logic
+        perex: Euphoria prevents the programmer from distinguishing between batch and stream processing. Programs can be written once and applied to both processing modes without the need to maintain to distinct versions of the business logic.
+      - title: Engine independence
+        perex: >
+          Euphoria deliberately does not expose technology specific items such that resulting programs can be executed on various engines, e.g. Apache Flink or Apache Spark.
+      - title: Modern API
+        perex: >
+           Euphoria provides an API based on Java8 leveraging Lambda expression to keep the typically required boilerplate to a minimum. The resulting code is usually easy-to-read and, thus, easier to understand.
+    menu:
+      - link:
+        title: "About"
+        url: "/euphoria/index.html"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/euphoria/"
+
   # Sklik API
   - key: sklik-api
     title: Sklik API
@@ -228,4 +253,3 @@ projects:
       - link:
         title: "Find me at GitHub"
         url: "https://github.com/seznam/sklik-api-python-client"
-
