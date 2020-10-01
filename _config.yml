@@ -256,7 +256,7 @@ projects:
   # IMA.js
   - key: ima-js
     title: IMA.js
-    url: /ima-js/index.html
+    url: https://imajs.io/
     description: >
         The IMA.js is a application development stack for developing isomorphic applications written in pure JavaScript.
     keywords: >
@@ -264,7 +264,7 @@ projects:
     menu:
       - link:
         title: "About"
-        url: "/ima-js/index.html"
+        url: "https://imajs.io/"
       - link:
         title: "Find me at GitHub"
-        url: "https://github.com/seznam/IMA.js-skeleton"
+        url: "https://github.com/seznam/ima"
