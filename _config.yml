@@ -268,3 +268,19 @@ projects:
       - link:
         title: "Find me at GitHub"
         url: "https://github.com/seznam/ima"
+
+  # jailoc
+  - key: jailoc
+    title: 🔒 jailoc
+    url: https://github.com/seznam/jailoc
+    description: >
+        jailoc wraps OpenCode agents in isolated Docker containers with file isolation 📁, network isolation 🌐, and sandboxed Docker-in-Docker 🐳 — so AI agents can run autonomously without touching your host system.
+    keywords: >
+        opensource,jailoc,docker,sandbox,security,ai-agents,golang
+    menu:
+      - link:
+        title: "📖 Docs"
+        url: "https://seznam.github.io/jailoc/"
+      - link:
+        title: "Find me at GitHub"
+        url: "https://github.com/seznam/jailoc"
