@@ -1,22 +1,14 @@
 title: Opensource projects
-url: http://seznam.github.io
+url: https://seznam.github.io
 description: >
     This is the home of Seznam's contributions to the open source community
-safe: false
-auto: true
-server: false
-server_port: 4000
 baseurl: /
-url: http://localhost:4000
-
-source: .
-destination: ./_site
 
 future: true
 lsi: false
 # pygments: true
 highlighter: rouge
-markdown: maruku
+markdown: kramdown
 permalink: date
 
 
