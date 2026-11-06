@@ -266,9 +266,9 @@ projects:
     title: 🔒 jailoc
     url: https://github.com/seznam/jailoc
     description: >
-        jailoc wraps OpenCode agents in isolated Docker containers with file isolation 📁, network isolation 🌐, and sandboxed Docker-in-Docker 🐳 — so AI agents can run autonomously without touching your host system.
+        jailoc runs coding agents (OpenCode, Claude Code, GitHub Copilot CLI, OmO) in sandboxed libkrun micro-VMs with file isolation 📁, network isolation 🌐, and sandboxed Docker 🐳 — so AI agents can work autonomously without touching your host system.
     keywords: >
-        opensource,jailoc,docker,sandbox,security,ai-agents,golang
+        opensource,jailoc,microvm,libkrun,sandbox,security,ai-agents,golang
     menu:
       - link:
         title: "📖 Docs"
